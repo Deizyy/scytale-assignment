@@ -21,28 +21,30 @@ To run this project, ensure you have the following installed on your machine:
 
 ### 1. Clone the Repository
 Clone this project to your local machine and navigate to the project directory.
-```bash
-git clone <YOUR_REPO_URL>
-cd <YOUR_PROJECT_FOLDER>
 
-### 2. Configure Security (Environment Variables)
+```bash
+git clone "https://github.com/Deizyy/scytale-assignment"
+cd "scytale_assignment"
+
+2. Configure Security (Environment Variables)
   GITHUB_TOKEN=your_github_token_here
 
-### 3. Start the Environment
+3. Start the Environment
 Initialize the Airflow services using Docker Compose. This command will also install necessary Python dependencies (pandas, pyarrow, requests) automatically. Open a terminal in the project folder and run:
 ```bash
   docker-compose up
 
-### 4. Access the Airflow UI
+4. Access the Airflow UI
 Open your web browser and go to: http://localhost:8080
 Username: airflow
 Password: airflow
 
-### 5. Trigger the Pipeline
+5. Trigger the Pipeline
 In the Airflow UI, locate the DAG named scytale_compliance_etl.
 Toggle the Unpause switch (on the left side) to make it active (blue).
 Click the Play button (Actions column) and select Trigger DAG.
 Click on the DAG name and go to the Graph view to watch the execution progress in real-time.
+
 Output Files
 Upon successful execution, the pipeline generates files in the data/ directory:
 Raw Data: daily_prs.json - The raw extraction from GitHub.
