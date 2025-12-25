@@ -24,10 +24,8 @@ Clone this project to your local machine and navigate to the project directory.
 
 ```bash
 git clone "https://github.com/Deizyy/scytale-assignment"
-cd "scytale_assignment"
-```bash
+cd "scytale_assignment"''
 
-```text
 2. Configure Security (Environment Variables)
   GITHUB_TOKEN=your_github_token_here
 
