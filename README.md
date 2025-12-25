@@ -31,7 +31,6 @@ cd "scytale_assignment"''
 
 3. Start the Environment
 Initialize the Airflow services using Docker Compose. This command will also install necessary Python dependencies (pandas, pyarrow, requests) automatically. Open a terminal in the project folder and run:
-```bash
   docker-compose up
 
 4. Access the Airflow UI
