@@ -21,13 +21,23 @@ To run this project, ensure you have the following installed on your machine:
 
 ### 1. Clone the Repository
 Clone this project to your local machine and navigate to the project directory.
+### 1. Clone the Repository
+Clone this project to your local machine and navigate to the project directory.
 
 ```bash
-git clone "https://github.com/Deizyy/scytale-assignment"
-cd "scytale_assignment"''
+git clone "[https://github.com/Deizyy/scytale-assignment](https://github.com/Deizyy/scytale-assignment)"
+cd "scytale_assignment"
 
 2. Configure Security (Environment Variables)
   GITHUB_TOKEN=your_github_token_here
+=======
+```bash
+git clone "https://github.com/Deizyy/scytale-assignment"
+cd "scytale_assignment"
+
+### 2. Configure Security (Environment Variables)
+  GITHUB_TOKEN=github_token_here
+>>>>>>> bb788a39d64c60b9a9343a2e3cb847d6e9d7f645
 
 3. Start the Environment
 Initialize the Airflow services using Docker Compose. This command will also install necessary Python dependencies (pandas, pyarrow, requests) automatically. Open a terminal in the project folder and run:
