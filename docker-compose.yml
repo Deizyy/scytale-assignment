@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  airflow:
+    image: apache/airflow:2.11.0
+    restart: always
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__WEBSERVER__RBAC=True
+      # Load GitHub Token from .env file
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./plugins:/opt/airflow/plugins
+      - ./data:/opt/airflow/data
+    ports:
+      - "8080:8080"
+    command: >
+      bash -c "pip install pandas pyarrow requests && 
+      airflow db init && 
+      airflow users create --username airflow --password airflow --firstname Admin --lastname User --role Admin --email admin@example.com &&
+      airflow webserver & 
+      airflow scheduler"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
